@@ -7,19 +7,10 @@ class Grid extends StatelessWidget {
       shrinkWrap: true,
       physics: ScrollPhysics(),
       crossAxisCount: 3,
-      children: List.generate(3, (index) {
+      children: List.generate(12, (index) {
         return Container(
-          margin: EdgeInsets.all(8),
-          color: Colors.pink,
-          child: Center(
-            child: Text(
-              'Item ${index + 1}',
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 20,
-              ),
-            ),
-          ),
+          margin: EdgeInsets.all(2),
+          color: Colors.grey,
         );
       }),
     );
