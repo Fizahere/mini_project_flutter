@@ -59,7 +59,7 @@ class _LoginFormState extends State<LoginForm> {
                       ),
                     ),
                     SizedBox(height: 40,),
-                            ElevatedButton(
+                    ElevatedButton(
                 onPressed: () async {
                   String u_email = userEmail.text;
                   String u_password = userPassword.text;
@@ -84,30 +84,30 @@ class _LoginFormState extends State<LoginForm> {
                         backgroundColor: MaterialStateProperty.all<Color>(Colors.blue),
                       ),
                     ),
-                    SizedBox(
-                      height:20
-                    ),
+                   Text('or',),
                     ElevatedButton(
-                      onPressed: ()  {
+                      onPressed: () {
                         signInWithGoogle();
-                        // UserCredential? userCredential = await signInWithGoogle();
-                        // if (userCredential != null) {
-                        //   print('User signed in: ${userCredential.user!.displayName}');
-                        // } else {
-                        //   print('Error signing in with Google');
-                        // }
                       },
                       child: Center(
-                        child: Text(
-                          'Signin with google',
-                          style: TextStyle(color: Colors.white),
+                        child: Row(
+                          children: [
+                            Image.asset('images/google.png', height: 20, width: 20,),
+                            SizedBox(width: 30,),
+                            Text(
+                              'Signin with google',
+                              style: TextStyle(color: Colors.black),
+                            ),
+                          ],
                         ),
                       ),
                       style: ButtonStyle(
-                        backgroundColor: MaterialStateProperty.all<Color>(Colors.blue),
+                        backgroundColor: MaterialStateProperty.all<Color>(Colors.white),
+                        side: MaterialStateProperty.all<BorderSide>(
+                          BorderSide(color: Colors.grey[300]!, width: 1.0), // Adjust width and color as needed
+                        ),
                       ),
                     ),
-
                   ],
                 ),
               )
