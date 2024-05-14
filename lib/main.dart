@@ -1,9 +1,18 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:tts06e/BNB/main_screen.dart';
+import 'package:tts06e/BNB/product_screen.dart';
+import 'package:tts06e/Firebase/login.dart';
+import 'package:tts06e/Firebase/splash_screen.dart';
+import 'package:tts06e/firebase_options.dart';
 import 'package:tts06e/profile_screen.dart';
 import 'package:tts06e/row_example.dart';
 import 'package:tts06e/stack_example.dart';
 
-void main() {
+void main() async{
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   runApp(const MyApp());
 }
 
@@ -12,8 +21,12 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: ProfileScreen(),
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: ProductScreen(),
+      theme: ThemeData(
+        textTheme: GoogleFonts.poppinsTextTheme()
+      ),
     );
   }
 }
