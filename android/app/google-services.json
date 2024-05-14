@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "686347798143",
+    "project_id": "tts06e",
+    "storage_bucket": "tts06e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:686347798143:android:b006bf1841b4672cb7a14a",
+        "android_client_info": {
+          "package_name": "com.example.tts06e"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAeNQuoVj91lVuoqMnE-HEfygnY1lZ2eVo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
