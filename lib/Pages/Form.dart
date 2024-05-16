@@ -1,7 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-
-import 'GoogleSigninService.dart';
+import '../components/buttons.dart';
 
 class LoginForm extends StatefulWidget {
   const LoginForm({super.key});
@@ -59,55 +58,33 @@ class _LoginFormState extends State<LoginForm> {
                       ),
                     ),
                     SizedBox(height: 40,),
-                    ElevatedButton(
-                onPressed: () async {
-                  String u_email = userEmail.text;
-                  String u_password = userPassword.text;
-                  try {
-                    await FirebaseAuth.instance.createUserWithEmailAndPassword(
-                        email: u_email, password: u_password);
-                  }on FirebaseAuthException catch (e) {
-                    ScaffoldMessenger.of(context).showSnackBar(
-                      SnackBar(
-                        content: Text(e.toString()),
-                      ),
-                    );
-                  }
-                },
-                            child: Center(
-                        child: Text(
-                          'Sign Up',
-                          style: TextStyle(color: Colors.white),
-                        ),
-                      ),
-                      style: ButtonStyle(
-                        backgroundColor: MaterialStateProperty.all<Color>(Colors.blue),
-                      ),
-                    ),
+    ElevatedButton(
+    onPressed: () async {
+    String u_email = userEmail.text;
+    String u_password = userPassword.text;
+    try {
+    await FirebaseAuth.instance.createUserWithEmailAndPassword(
+    email: u_email, password: u_password);
+    }on FirebaseAuthException catch (e) {
+    ScaffoldMessenger.of(context as BuildContext).showSnackBar(
+    SnackBar(
+    content: Text(e.toString()),
+    ),
+    );
+    }
+    },
+    child: Center(
+    child: Text(
+    'Sign Up',
+    style: TextStyle(color: Colors.white),
+    ),
+    ),
+    style: ButtonStyle(
+    backgroundColor: MaterialStateProperty.all<Color>(Colors.blue),
+    ),
+    ),
                    Text('or',),
-                    ElevatedButton(
-                      onPressed: () {
-                        signInWithGoogle();
-                      },
-                      child: Center(
-                        child: Row(
-                          children: [
-                            Image.asset('images/google.png', height: 20, width: 20,),
-                            SizedBox(width: 30,),
-                            Text(
-                              'Signin with google',
-                              style: TextStyle(color: Colors.black),
-                            ),
-                          ],
-                        ),
-                      ),
-                      style: ButtonStyle(
-                        backgroundColor: MaterialStateProperty.all<Color>(Colors.white),
-                        side: MaterialStateProperty.all<BorderSide>(
-                          BorderSide(color: Colors.grey[300]!, width: 1.0), // Adjust width and color as needed
-                        ),
-                      ),
-                    ),
+                    ButtonUtils.googleButton(),
                   ],
                 ),
               )

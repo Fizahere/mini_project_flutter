@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
-import 'Grid.dart';
+import '../components/Grid.dart';
 
 class Profile extends StatefulWidget {
   const Profile({super.key});
