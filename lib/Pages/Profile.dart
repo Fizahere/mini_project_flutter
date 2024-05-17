@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
 import '../components/Grid.dart';
+import '../components/bottomBar.dart';
 
 class Profile extends StatefulWidget {
   const Profile({super.key});
