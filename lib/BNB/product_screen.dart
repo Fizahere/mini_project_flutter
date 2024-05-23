@@ -40,6 +40,7 @@ class _ProductScreenState extends State<ProductScreen> {
       String productImageUrl = await taskSnapshot.ref.getDownloadURL();
       addProduct(productID, productImageUrl);
     }
+
   }
 
   void addProduct(String productID, String imageUrl) async {
