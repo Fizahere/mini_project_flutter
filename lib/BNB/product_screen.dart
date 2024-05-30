@@ -326,6 +326,7 @@ class _ProductScreenState extends State<ProductScreen> {
                           const SizedBox(
                             height: 20,
                           ),
+
                           TextFormField(
                             controller: pPrice,
                             validator: (val) {
